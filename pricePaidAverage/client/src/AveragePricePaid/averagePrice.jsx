@@ -2,7 +2,7 @@ import React from 'react';
 import Chart from './chart.jsx';
 import $ from 'jquery';
 
-const port = '52.53.224.110';
+// const port = '52.53.224.110';
 const path = window.location.pathname;
 
 class AveragePrice extends React.Component {
@@ -14,7 +14,7 @@ class AveragePrice extends React.Component {
   }
 
   componentDidMount() {
-    $.get(`http://${port}:3001/api/price${path}`, (stockData) => {
+    $.get(`http://localhost:8080/api/price${path}`, (stockData) => {
       const priceData = [];
       stockData.map(stock => priceData.push(stock.price));
       this.setState({

@@ -12,8 +12,8 @@ app.use(express.static(`${__dirname}/../public/`));
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, '../public')));
+// app.use(morgan('dev'));
+// app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/:id', (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, '../public/index.html'));

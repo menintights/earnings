@@ -6,7 +6,6 @@ import React from 'react';
 import PercentageLine from './PercentageLine.jsx';
 import $ from 'jquery';
 
-const host = '52.53.224.110';
 const path = window.location.pathname;
 
 class AnalystChart extends React.Component {
@@ -18,8 +17,7 @@ class AnalystChart extends React.Component {
   }
 
   componentDidMount() {
-    $.get(`http://${host}:3003/api/ratings${path}`, (Data) => {
-    // $.get('//front-end-capstone.herokuapp.com/data/ratings', (Data) => {
+    $.get(`http://localhost:8080/api/ratings${path}`, (Data) => {
       this.setState({
         ratings: Data,
       });
